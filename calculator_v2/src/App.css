@@ -1,0 +1,33 @@
+.App{
+  position:fixed;
+  padding:0;
+  margin:0;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgb(202, 81, 218), rgb(175, 88, 88));  
+  align-items: center;
+}
+
+.calContainer{
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  top: 50px;
+  background-color: rgb(252, 243, 232);
+  border-radius: 10%;
+  }
+
+  #name{
+    position: relative;
+    font-style: italic;
+    color: rgb(0, 0, 0);
+    transform: rotate(90deg);
+    font-size: 25px;
+    width: 80%;
+    bottom:200px;
+    float: right;
+    left: 155px;
+  }
