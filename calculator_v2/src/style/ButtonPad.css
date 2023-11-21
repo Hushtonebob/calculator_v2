@@ -1,0 +1,104 @@
+.buttonPad{
+    position: relative;
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+    gap: 20px;
+    left: 25px;
+    top: 25px;
+  }
+
+  #numberButton{
+    height: 60px;
+    width:60px;
+    background-image: linear-gradient(rgb(175, 88, 88),rgb(202, 81, 218));    
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+  }
+
+  #mathButton{
+    height: 60px;
+    width:60px;
+    background-image: linear-gradient(rgb(175, 88, 88),rgb(202, 81, 218));    
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+    transition: 2s;
+  }
+
+  #mathEngaged{
+    height: 60px;
+    width:60px;
+    background-image: white;   
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+    transition: 2s;
+  }
+
+  #numberButton:hover{
+    background-image: linear-gradient(rgb(202, 81, 218), rgb(175, 88, 88));
+  }
+
+  .otherButtonPad{
+    position: relative;
+    display: grid;
+    grid-template-columns: 60px 60px;
+    gap: 20px;
+    float: right;
+    right:45px;
+    bottom: 275px;
+    }
+
+    #equal{
+      position: relative;
+      height: 60px;
+      width:140px;
+      background-image: linear-gradient(rgb(175, 88, 88),rgb(202, 81, 218));    
+      border-style: solid;
+      border-width: 5px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 50px;
+      cursor: pointer;
+      border: none;
+      float: right;
+      left:15px;
+      bottom:35px;
+    }
+    
+    #equal:hover{
+      background-image: linear-gradient(rgb(202, 81, 218), rgb(175, 88, 88));
+    }
+
+    #AC{
+      position: relative;
+      height: 140px;
+      width:60px;
+      background-image: linear-gradient(rgb(175, 88, 88),rgb(202, 81, 218));    
+      border-style: solid;
+      border-width: 5px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 30px;
+      cursor: pointer;
+      border: none;
+      left:345px;
+      bottom: 115px;
+    }
+    
+    #AC:hover{
+      background-image: linear-gradient(rgb(202, 81, 218), rgb(175, 88, 88));
+    }

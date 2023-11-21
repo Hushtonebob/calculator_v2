@@ -1,8 +1,8 @@
-export default function Display(){
+export default function Display({display}){
     return(
         <div className="displayContainer">
             <div id="display">
-                React Calculator
+                {display}
             </div>
         </div>
     );
