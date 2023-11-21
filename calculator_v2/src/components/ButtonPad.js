@@ -10,6 +10,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
     const [minusBtn, setMinusBtn] = useState("numberButton");
     const [timesBtn, setTimesBtn] = useState("numberButton");
     const [divideBtn, setDivideBtn] = useState("numberButton");
+    const [percent, setPercent] = useState("numberButton");
     const [answered, setAnswered] = useState(false);
     const numbersArr = ["1","2","3","4","5","6","7","8","9","0","."];
 
@@ -66,6 +67,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 setMinusBtn("numberButton");
                 setTimesBtn("numberButton");
                 setDivideBtn("numberButton");
+                setPercent("numberButton");
                 console.log("blam");
             }
             else if(e.target.value==="+"){
@@ -76,6 +78,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 setMinusBtn("numberButton");
                 setTimesBtn("numberButton");
                 setDivideBtn("numberButton");
+                setPercent("numberButton");
                 console.log("did it work?");
             }
             else if(e.target.value==="-" && active==="Active"){
@@ -86,6 +89,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 setPlusBtn("numberButton")
                 setTimesBtn("numberButton");
                 setDivideBtn("numberButton");
+                setPercent("numberButton");
         }
             else if(e.target.value==="-"){
                 setActive("Active");
@@ -95,6 +99,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 setPlusBtn("numberButton");
                 setTimesBtn("numberButton");
                 setDivideBtn("numberButton");
+                setPercent("numberButton");
                 console.log("did it work?");
         }
             else if(e.target.value==="X" && active==="Active"){
@@ -105,6 +110,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 setPlusBtn("numberButton");
                 setMinusBtn("numberButton");
                 setDivideBtn("numberButton");
+                setPercent("numberButton");
             }
             else if(e.target.value==="X"){
                 setActive("Active");
@@ -114,6 +120,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 setPlusBtn("numberButton");
                 setMinusBtn("numberButton");
                 setDivideBtn("numberButton");
+                setPercent("numberButton");
                 console.log("did it work?");
             }
             else if(e.target.value==="÷" && active==="Active"){
@@ -124,6 +131,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 setPlusBtn("numberButton");
                 setMinusBtn("numberButton");
                 setTimesBtn("numberButton");
+                setPercent("numberButton");
             }
             else if(e.target.value==="÷"){
                 setActive("Active");
@@ -133,6 +141,28 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 setPlusBtn("numberButton");
                 setMinusBtn("numberButton");
                 setTimesBtn("numberButton");
+                console.log("did it work?");
+                setPercent("numberButton");
+            }
+            else if(e.target.value==="%" && active==="Active"){
+                setActive("Non Active");
+                setSymbol("");
+                setPercent("numberButton");
+                setDisplay(num1);
+                setPlusBtn("numberButton");
+                setMinusBtn("numberButton");
+                setTimesBtn("numberButton");
+                setDivideBtn("numberButton");
+            }
+            else if(e.target.value==="%"){
+                setActive("Active");
+                setSymbol(e.target.value);
+                setDisplay("");
+                setPercent("mathEngaged");
+                setPlusBtn("numberButton");
+                setMinusBtn("numberButton");
+                setTimesBtn("numberButton");
+                setDivideBtn("numberButton");
                 console.log("did it work?");
             }
     }
@@ -181,6 +211,16 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 setSymbol("");
                 setDivideBtn("numberButton");  
             }
+            else if(symbol==="%"){
+                let answer= (parseFloat(num1)/100*parseFloat(num2));
+                console.log(typeof answer)
+                setDisplay(answer);
+                setNum1(0);
+                setNum2(0);
+                setActive("Non Active");
+                setSymbol("");
+                setPercent("numberButton");  
+            }
         };
     };
 
@@ -194,7 +234,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 <button id={minusBtn} value="-">-</button>
                 <button id={timesBtn} value={"X"}>X</button>
                 <button id={divideBtn} value={"÷"}>÷</button>
-                <button id="numberButton" value={"%"}>%</button>
+                <button id={percent} value={"%"}>%</button>
             </div>
             <button id="equal" onClick={equal}>=</button>
             <button id="AC">AC</button>
