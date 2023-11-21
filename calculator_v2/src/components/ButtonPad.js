@@ -11,7 +11,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
     const [timesBtn, setTimesBtn] = useState("numberButton");
     const [divideBtn, setDivideBtn] = useState("numberButton");
     const [percent, setPercent] = useState("numberButton");
-    const [answered, setAnswered] = useState(false);
+    const [ac, setAc] = useState("AC");
     const numbersArr = ["1","2","3","4","5","6","7","8","9","0","."];
 
     const numberMap = numbersArr.map((e)=>{
@@ -20,6 +20,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
     const press=(e)=>{
     if(e.target.value===undefined){}
     else{
+        setAc("C");
         if(display==="React Calculator" && e.target.value==="."){
             setDisplay("0.");
             setNum1(0);
@@ -224,6 +225,21 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
         };
     };
 
+    const clearPress=()=>{
+        setDisplay("React Calculator");
+        setPlusBtn("numberButton");
+        setMinusBtn("numberButton");
+        setTimesBtn("numberButton");
+        setDivideBtn("numberButton");
+        setPercent("numberButton");
+        setNum1("");
+        setNum2("");
+        setActive("Non Active");
+        setSymbol("");
+        setAc("AC");
+
+    }
+
     return(
         <div>
             <div className="buttonPad" onClick={press}>
@@ -237,7 +253,7 @@ export default function ButtonPad({display,setDisplay,num1,setNum1,num2,setNum2}
                 <button id={percent} value={"%"}>%</button>
             </div>
             <button id="equal" onClick={equal}>=</button>
-            <button id="AC">AC</button>
+            <button id="AC" onClick={clearPress}>{ac}</button>
         </div>
     );
 };
